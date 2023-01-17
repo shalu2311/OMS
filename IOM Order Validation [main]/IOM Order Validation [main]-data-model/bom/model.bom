@@ -1,0 +1,67 @@
+
+package myModel;
+
+
+public class Customer
+        property "ads.typeId" "2"
+        property "de.generated" "true"
+{
+    public string country
+                property "ads.attributeId" "1"
+                property update "true";
+    public double creditLimit
+                property "ads.attributeId" "2"
+                property update "true";
+    public long creditScore
+                property "ads.attributeId" "3"
+                property update "true";
+    public Customer(string country, double creditLimit, long creditScore)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Customer()
+                property "dataio.default" "true";
+}
+
+public class Order
+        property "ads.typeId" "3"
+        property "de.generated" "true"
+{
+    public ilog.rules.brl.SimpleDate deliveryDate
+                property "ads.attributeId" "1"
+                property update "true";
+    public ilog.rules.brl.SimpleDate orderDate
+                property "ads.attributeId" "2"
+                property update "true";
+    public Order(ilog.rules.brl.SimpleDate deliveryDate, ilog.rules.brl.SimpleDate orderDate)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Order()
+                property "dataio.default" "true";
+}
+
+public class OrderItem
+        property "ads.typeId" "1"
+        property "de.generated" "true"
+{
+    public double pricePerUnit
+                property "ads.attributeId" "1"
+                property update "true";
+    public long productCode
+                property "ads.attributeId" "2"
+                property update "true";
+    public long quantity
+                property "ads.attributeId" "3"
+                property update "true";
+    public OrderItem(double pricePerUnit, long productCode, long quantity)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public OrderItem()
+                property "dataio.default" "true";
+}
+

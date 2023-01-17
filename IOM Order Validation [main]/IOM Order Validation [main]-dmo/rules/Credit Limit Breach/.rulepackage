@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Credit Limit Breach</name>
+  <uuid>aa788746-c86e-4663-b160-27d409ab06e6</uuid>
+</ilog.rules.studio.model.base:RulePackage>

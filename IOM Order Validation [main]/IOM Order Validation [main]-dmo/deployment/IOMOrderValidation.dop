@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="IOMOrderValidation" targetRuleProjectName="IOM Order Validation [main]-dmo">
+  <name>IOMOrderValidationDecision</name>
+  <uuid>edfbe61e-9751-43de-99d9-d21a7c33cca0</uuid>
+  <decisionModel href="../rules/IOM%20Order%20Validation.dmo#428bd548-dc9b-4aee-b153-1bf198e53c99"/>
+  <targetRuleProject href="../../IOM%20Order%20Validation%20%5Bmain%5D-dmo#877f3fe6-4f2a-4306-8fcd-2ff4821c7be2"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

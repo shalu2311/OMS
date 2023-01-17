@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Order Total</name>
+  <uuid>557a9094-7d8c-4341-baf3-1b891dcba009</uuid>
+</ilog.rules.studio.model.base:RulePackage>

@@ -1,0 +1,38 @@
+
+# myModel.Customer
+myModel.Customer#concept.label = Customer
+myModel.Customer.Customer(java.lang.String,double,long)#phrase.navigation = a new {Customer} where {0, Country} {1, CreditLimit} {2, CreditScore}
+myModel.Customer.country#phrase.action = set the Country of {this} to {Country}
+myModel.Customer.country#phrase.navigation = {Country} of {this}
+myModel.Customer.creditLimit#phrase.action = set the CreditLimit of {this} to {CreditLimit}
+myModel.Customer.creditLimit#phrase.addition_setter = add {CreditLimit} to the CreditLimit of {this}
+myModel.Customer.creditLimit#phrase.navigation = {CreditLimit} of {this}
+myModel.Customer.creditLimit#phrase.subtraction_setter = subtract {CreditLimit} from the CreditLimit of {this}
+myModel.Customer.creditScore#phrase.action = set the CreditScore of {this} to {CreditScore}
+myModel.Customer.creditScore#phrase.addition_setter = add {CreditScore} to the CreditScore of {this}
+myModel.Customer.creditScore#phrase.navigation = {CreditScore} of {this}
+myModel.Customer.creditScore#phrase.subtraction_setter = subtract {CreditScore} from the CreditScore of {this}
+
+# myModel.Order
+myModel.Order#concept.label = Order
+myModel.Order.Order(ilog.rules.brl.SimpleDate,ilog.rules.brl.SimpleDate)#phrase.navigation = a new {Order} where {0, deliveryDate} {1, orderDate}
+myModel.Order.deliveryDate#phrase.action = set the deliveryDate of {this} to {deliveryDate}
+myModel.Order.deliveryDate#phrase.navigation = {deliveryDate} of {this}
+myModel.Order.orderDate#phrase.action = set the orderDate of {this} to {orderDate}
+myModel.Order.orderDate#phrase.navigation = {orderDate} of {this}
+
+# myModel.OrderItem
+myModel.OrderItem#concept.label = OrderItem
+myModel.OrderItem.OrderItem(double,long,long)#phrase.navigation = a new {OrderItem} where {0, PricePerUnit} {1, ProductCode} {2, Quantity}
+myModel.OrderItem.pricePerUnit#phrase.action = set the PricePerUnit of {this} to {PricePerUnit}
+myModel.OrderItem.pricePerUnit#phrase.addition_setter = add {PricePerUnit} to the PricePerUnit of {this}
+myModel.OrderItem.pricePerUnit#phrase.navigation = {PricePerUnit} of {this}
+myModel.OrderItem.pricePerUnit#phrase.subtraction_setter = subtract {PricePerUnit} from the PricePerUnit of {this}
+myModel.OrderItem.productCode#phrase.action = set the ProductCode of {this} to {ProductCode}
+myModel.OrderItem.productCode#phrase.addition_setter = add {ProductCode} to the ProductCode of {this}
+myModel.OrderItem.productCode#phrase.navigation = {ProductCode} of {this}
+myModel.OrderItem.productCode#phrase.subtraction_setter = subtract {ProductCode} from the ProductCode of {this}
+myModel.OrderItem.quantity#phrase.action = set the Quantity of {this} to {Quantity}
+myModel.OrderItem.quantity#phrase.addition_setter = add {Quantity} to the Quantity of {this}
+myModel.OrderItem.quantity#phrase.navigation = {Quantity} of {this}
+myModel.OrderItem.quantity#phrase.subtraction_setter = subtract {Quantity} from the Quantity of {this}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Delivery Date Rule</name>
+  <uuid>b62f524f-7f47-462a-8de3-11d84c2948fd</uuid>
+</ilog.rules.studio.model.base:RulePackage>

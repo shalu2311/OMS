@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>output-default-setting</name>
+  <uuid>5dc5ca8f-065e-483d-aa5b-ade7fe138f2c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set 'the order items' to an empty list of OrderItems ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

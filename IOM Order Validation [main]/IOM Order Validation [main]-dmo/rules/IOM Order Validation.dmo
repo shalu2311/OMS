@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>IOM Order Validation</name>
+  <uuid>428bd548-dc9b-4aee-b153-1bf198e53c99</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="IOMOrderValidation" name="IOM Order Validation" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_1" name="Order">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.Order" collection="false" name="the order"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_1_ii" name="Order" typeRef="myModel.Order"/>
+    </inputData>
+    <inputData id="node_3" name="OrderItems">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.OrderItem" collection="true" name="the order items"/>
+                <rule defaultRule="true" href="OrderItems/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="OrderItems" typeRef="myModel.OrderItem[]"/>
+    </inputData>
+    <inputData id="node_6" name="Customer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.Customer" collection="false" name="the customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Customer" typeRef="myModel.Customer"/>
+    </inputData>
+    <decision id="node_0" name="Delivery Date Rule">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Order" collection="false" name="the order"/>
+                <output bomType="java.lang.String" collection="false" name="the delivery date rule"/>
+                <rule defaultRule="false" href="Delivery%20Date%20Rule/rule-1.drl" kind="BusinessRule" name="rule-1"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_0_ii" name="Delivery Date Rule" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Order Total">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.OrderItem" collection="true" name="the order items"/>
+                <output bomType="java.lang.Double" collection="false" name="the order total"/>
+                <rule defaultRule="false" href="Order%20Total/Caclulate%20Order%20Total.drl" kind="BusinessRule" name="Caclulate Order Total"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Order Total" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Customer Country Check">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Customer" collection="false" name="the customer"/>
+                <output bomType="java.lang.String" collection="false" name="the customer country check"/>
+                <rule defaultRule="true" href="Customer%20Country%20Check/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="Customer%20Country%20Check/dt-1.dmt" kind="DecisionTable" name="dt-1"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Customer Country Check" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Customer Limit">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Customer" collection="false" name="the customer"/>
+                <output bomType="java.lang.Double" collection="false" name="the customer limit"/>
+                <rule defaultRule="false" href="Customer%20Limit/dt-1.dmt" kind="DecisionTable" name="dt-1"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Customer Limit" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Credit Limit Breach">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the order total"/>
+                <input bomType="java.lang.Double" collection="false" name="the customer limit"/>
+                <output bomType="java.lang.String" collection="false" name="the credit limit breach"/>
+                <rule defaultRule="true" href="Credit%20Limit%20Breach/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="Credit%20Limit%20Breach/rule-1.drl" kind="BusinessRule" name="rule-1"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Credit Limit Breach" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>
